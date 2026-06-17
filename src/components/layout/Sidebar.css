@@ -1,0 +1,342 @@
+.sidebar {
+  width: 268px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(255,255,255,.99) 0%, rgba(248,250,252,.97) 100%);
+  border-right: 1px solid rgba(226,232,240,.9);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: transform .35s ease, box-shadow .35s ease;
+  z-index: 40;
+  backdrop-filter: blur(14px);
+  box-shadow: 1px 0 0 rgba(255,255,255,.7), 8px 0 24px rgba(15,23,42,.03);
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(148,163,184,.3); border-radius: 20px; }
+
+/* ── Logo ── */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 22px 20px 18px;
+  position: relative;
+  transition: opacity var(--t);
+}
+.sidebar-logo:hover { opacity: .85; }
+.sidebar-logo::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 20px; right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(226,232,240,.9), transparent);
+}
+
+.sidebar-logo-icon {
+  width: 36px; height: 36px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #2563EB, #4F46E5);
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 8px 18px rgba(37,99,235,.22), inset 0 1px 0 rgba(255,255,255,.25);
+}
+.sidebar-logo-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  color: var(--text-900);
+}
+.sidebar-close { display: none; }
+
+/* ── Divider ── */
+.sidebar-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(226,232,240,.9), transparent);
+  margin: 0 18px;
+}
+
+/* ── Nav ── */
+.sidebar-nav { padding: 16px 12px; flex: 1; }
+
+.sidebar-section-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-400);
+  padding: 0 10px 10px;
+}
+
+/* ── Items ── */
+.sidebar-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 13px;
+  margin-bottom: 4px;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--text-500);
+  font-size: .88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .2s;
+  text-align: left;
+  overflow: hidden;
+}
+.sidebar-item:hover {
+  background: rgba(248,250,252,.95);
+  color: var(--text-900);
+  transform: translateX(2px);
+}
+.sidebar-item--active {
+  background: linear-gradient(135deg, rgba(37,99,235,.1), rgba(79,70,229,.06));
+  color: var(--blue);
+  font-weight: 700;
+  border: 1px solid rgba(59,130,246,.16);
+  box-shadow: 0 6px 18px rgba(37,99,235,.07);
+}
+.sidebar-item--active::after {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px; bottom: 10px;
+  width: 3px;
+  border-radius: 20px;
+  background: var(--blue);
+}
+.sidebar-item-arrow { margin-left: auto; opacity: .6; }
+
+/* Badge */
+.sidebar-badge {
+  margin-left: auto;
+  background: var(--blue);
+  color: white;
+  font-size: .68rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 20px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ── History Panel ── */
+.sidebar-history {
+  margin: 4px 0 8px 0;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.sidebar-history-empty {
+  padding: 14px;
+  font-size: .8rem;
+  color: var(--text-400);
+  text-align: center;
+}
+
+.sidebar-history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--t);
+  gap: 8px;
+}
+.sidebar-history-item:last-child { border-bottom: none; }
+.sidebar-history-item:hover { background: var(--surface); }
+
+.sidebar-history-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--text-400);
+  min-width: 0;
+  flex: 1;
+}
+.sidebar-history-left svg { flex-shrink: 0; margin-top: 2px; }
+
+.sidebar-history-role {
+  display: block;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--text-700);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+.sidebar-history-date {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: .7rem;
+  color: var(--text-400);
+  margin-top: 1px;
+}
+
+.sidebar-history-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.sidebar-history-score {
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+.sidebar-history-del {
+  background: none;
+  border: none;
+  color: var(--text-300);
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 5px;
+  display: flex;
+  transition: color var(--t);
+}
+.sidebar-history-del:hover { color: var(--red); }
+
+/* ── Footer ── */
+.sidebar-footer { padding: 12px 12px 18px; }
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(248,250,252,.9), rgba(255,255,255,.95));
+  border: 1px solid rgba(226,232,240,.85);
+}
+
+.sidebar-avatar {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #DBEAFE, #E0E7FF);
+  color: var(--blue);
+  font-size: .78rem;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(147,197,253,.4);
+}
+
+.sidebar-user-name {
+  display: block;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--text-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sidebar-user-role { font-size: .72rem; color: var(--text-400); }
+
+.sidebar-logout:hover {
+  background: linear-gradient(135deg, rgba(254,242,242,.95), rgba(255,255,255,.96));
+  color: var(--red);
+}
+
+/* ── Guest auth buttons ── */
+.sidebar-auth-btns {
+  padding: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sidebar-auth-hint {
+  font-size: .75rem;
+  color: var(--text-400);
+  padding: 0 10px 8px;
+  line-height: 1.4;
+}
+.sidebar-signin-btn {
+  color: var(--blue);
+  font-weight: 600;
+  border: 1px solid rgba(37,99,235,.2);
+  background: rgba(37,99,235,.04);
+}
+.sidebar-signin-btn:hover {
+  background: rgba(37,99,235,.1);
+  color: var(--blue-dark);
+  transform: translateX(2px);
+}
+.sidebar-signup-btn {
+  background: linear-gradient(135deg, #2563EB, #4F46E5);
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+.sidebar-signup-btn:hover {
+  opacity: .9;
+  transform: translateX(2px);
+}
+
+/* ── Mobile ── */
+.sidebar-hamburger {
+  display: none;
+  position: fixed;
+  top: 16px; left: 16px;
+  z-index: 60;
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(226,232,240,.9);
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(15,23,42,.1);
+  align-items: center; justify-content: center;
+  cursor: pointer;
+  color: var(--text-700);
+  transition: transform .2s;
+}
+.sidebar-hamburger:hover { transform: translateY(-1px); }
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,.42);
+  backdrop-filter: blur(4px);
+  z-index: 35;
+  animation: fadeIn .25s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    transform: translateX(-100%);
+    box-shadow: 20px 0 60px rgba(15,23,42,.25);
+  }
+  .sidebar--open { transform: translateX(0); }
+  .sidebar-hamburger { display: flex; }
+  .sidebar-close {
+    display: flex;
+    margin-left: auto;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(248,250,252,.9);
+    color: var(--text-500);
+    align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .sidebar-close:hover { background: var(--surface-2); color: var(--text-900); }
+}

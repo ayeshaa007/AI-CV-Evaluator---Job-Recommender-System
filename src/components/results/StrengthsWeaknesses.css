@@ -1,0 +1,45 @@
+.sw-card { padding: 22px 24px; }
+.sw-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.sw-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sw-icon--green { background: var(--green-light); color: var(--green);  border: 1px solid var(--green-mid); }
+.sw-icon--red   { background: var(--red-light);   color: var(--red);    border: 1px solid #FECACA; }
+.sw-title { font-size: .9375rem; font-weight: 700; color: var(--text-900); }
+.sw-sub   { font-size: .75rem; color: var(--text-400); margin-top: 1px; }
+
+.sw-list { display: flex; flex-direction: column; gap: 8px; }
+.sw-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--r-md);
+  font-size: .875rem;
+  color: var(--text-700);
+  line-height: 1.55;
+  transition: background var(--t);
+}
+.sw-item--strength:hover { background: var(--green-light); }
+.sw-item--weakness:hover { background: var(--red-light); }
+
+.sw-bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.sw-bullet--green { background: var(--green); }
+.sw-bullet--red   { background: var(--red); }

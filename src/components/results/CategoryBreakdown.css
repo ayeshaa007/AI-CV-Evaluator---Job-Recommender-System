@@ -1,0 +1,17 @@
+.cat-card { padding: 24px 28px; }
+.cat-card-head { margin-bottom: 20px; }
+.cat-card-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text-900); letter-spacing: -.01em; }
+.cat-card-sub   { font-size: .8125rem; color: var(--text-400); margin-top: 2px; }
+
+.cat-list { display: flex; flex-direction: column; gap: 14px; }
+
+.cat-item {}
+.cat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.cat-name  { font-size: .875rem; font-weight: 500; color: var(--text-700); }
+.cat-score { font-size: .9375rem; font-weight: 700; font-family: var(--font-mono); }
+.cat-denom { font-size: .75rem; color: var(--text-400); font-weight: 400; margin-left: 1px; }

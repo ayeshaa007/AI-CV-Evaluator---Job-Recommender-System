@@ -1,0 +1,113 @@
+.la-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.la-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 48px 40px;
+  text-align: center;
+  animation: slideUp .4s ease both;
+}
+
+/* Spinner ring */
+.la-spinner-ring {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 28px;
+}
+.la-spinner-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 5px solid var(--surface-2);
+}
+.la-spinner-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.la-spinner-pct {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -.02em;
+}
+
+.la-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-900);
+  letter-spacing: -.02em;
+  margin-bottom: 6px;
+}
+.la-sub { font-size: .9375rem; color: var(--text-400); margin-bottom: 24px; }
+
+.la-bar-wrap { margin-bottom: 28px; }
+.la-bar-track { height: 6px !important; }
+
+/* Steps */
+.la-steps { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+
+.la-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 14px;
+  border-radius: var(--r-md);
+  border: 1px solid transparent;
+  transition: all .4s ease;
+}
+.la-step--done {
+  background: var(--green-light);
+  border-color: var(--green-mid);
+}
+.la-step--current {
+  background: var(--blue-light);
+  border-color: var(--blue-mid);
+}
+.la-step--pending {
+  background: transparent;
+  border-color: transparent;
+}
+
+.la-step-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: .6875rem;
+  font-weight: 700;
+}
+.la-step--done    .la-step-icon { background: var(--green); color: #fff; }
+.la-step--current .la-step-icon { background: var(--blue);  color: #fff; }
+.la-step--pending .la-step-icon { background: var(--border); color: var(--text-400); }
+
+.la-step-label {
+  font-size: .875rem;
+  font-weight: 500;
+  transition: color .3s;
+}
+.la-step--done    .la-step-label { color: var(--green); }
+.la-step--current .la-step-label { color: var(--blue);  font-weight: 600; }
+.la-step--pending .la-step-label { color: var(--text-400); }
+
+.la-spin { animation: spin .8s linear infinite; }
+.la-step-num { font-family: var(--font-mono); }

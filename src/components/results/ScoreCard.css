@@ -1,0 +1,68 @@
+.score-card { padding: 28px 32px; }
+
+.score-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.score-card-eyebrow {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-400);
+  margin-bottom: 4px;
+}
+.score-card-job {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-900);
+  letter-spacing: -.02em;
+}
+
+.score-card-body {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+/* ring numbers */
+.score-ring-number {
+  font-family: var(--font-display);
+  font-size: 2.625rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+.score-ring-denom { font-size: .9375rem; color: var(--text-400); font-weight: 500; }
+
+.score-card-meta { flex: 1; min-width: 220px; }
+.score-card-desc {
+  font-size: .9375rem;
+  color: var(--text-500);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.score-card-desc strong { color: var(--text-900); }
+
+.score-tier-list { display: flex; flex-direction: column; gap: 6px; }
+.score-tier {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--r-md);
+  border: 1px solid transparent;
+  transition: all var(--t);
+}
+.score-tier--active {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+.score-tier-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.score-tier-range { font-size: .8125rem; color: var(--text-400); width: 56px; font-variant-numeric: tabular-nums; font-family: var(--font-mono); }
+.score-tier-label { font-size: .8125rem; font-weight: 600; color: var(--text-700); }

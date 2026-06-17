@@ -1,0 +1,101 @@
+/* =========================
+   JobRoleInput.css
+   ========================= */
+
+.job-role-field {
+  width: 100%;
+}
+
+.job-role-input-wrap {
+  position: relative;
+}
+
+.job-role-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: var(--text-400);
+
+  pointer-events: none;
+}
+
+.job-role-input {
+  padding-left: 42px !important;
+}
+
+.required-star {
+  color: #EF4444;
+}
+
+/* Chips */
+
+.job-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 14px;
+}
+
+.job-chip {
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(180deg,#FFFFFF,#F8FAFC);
+
+  border: 1px solid rgba(226,232,240,.9);
+
+  color: var(--text-600);
+
+  font-size: .8rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease,
+    background .22s ease;
+
+  box-shadow:
+    0 2px 6px rgba(15,23,42,.03);
+}
+
+.job-chip:hover {
+  border-color: rgba(37,99,235,.25);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239,246,255,.95),
+      rgba(219,234,254,.75)
+    );
+
+  color: #2563EB;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(37,99,235,.10);
+}
+
+.job-chip--active {
+  background:
+    linear-gradient(
+      135deg,
+      #2563EB,
+      #3B82F6
+    );
+
+  border-color: transparent;
+
+  color: white;
+
+  box-shadow:
+    0 10px 18px rgba(37,99,235,.22);
+}

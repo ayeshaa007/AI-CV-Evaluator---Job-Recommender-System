@@ -1,0 +1,163 @@
+/* =========================
+   JobDescriptionInput.css
+   ========================= */
+
+.jd-field {
+  width: 100%;
+}
+
+.jd-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 8px;
+}
+
+.jd-label-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Action Buttons */
+
+.jd-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 6px 12px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(226,232,240,.8);
+
+  background:
+    linear-gradient(180deg,#FFFFFF,#F8FAFC);
+
+  color: var(--text-500);
+
+  font-size: .76rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease,
+    background .22s ease;
+}
+
+.jd-action-btn:hover {
+  border-color: rgba(37,99,235,.22);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239,246,255,.9),
+      rgba(219,234,254,.75)
+    );
+
+  color: #2563EB;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 18px rgba(37,99,235,.08);
+}
+
+/* Textarea */
+
+.jd-textarea-wrap {
+  position: relative;
+}
+
+.jd-textarea-icon {
+  position: absolute;
+
+  top: 16px;
+  left: 14px;
+
+  color: var(--text-400);
+
+  pointer-events: none;
+}
+
+.jd-textarea {
+  width: 100%;
+
+  padding-left: 40px !important;
+  padding-top: 14px;
+
+  resize: none;
+
+  border-radius: 18px !important;
+
+  background:
+    linear-gradient(180deg,#FFFFFF,#FAFBFC);
+
+  border: 1px solid rgba(226,232,240,.9);
+
+  box-shadow:
+    inset 0 1px 2px rgba(15,23,42,.03);
+
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+
+  line-height: 1.7;
+
+  font-size: .9rem;
+}
+
+.jd-textarea:focus {
+  border-color: rgba(37,99,235,.45);
+
+  background: white;
+
+  box-shadow:
+    0 0 0 5px rgba(37,99,235,.10);
+}
+
+.jd-textarea--error {
+  border-color: #EF4444 !important;
+}
+
+/* Footer */
+
+.jd-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 8px;
+}
+
+.jd-charcount {
+  font-size: .74rem;
+  font-weight: 600;
+
+  color: var(--text-400);
+
+  padding: 4px 10px;
+
+  border-radius: 999px;
+
+  background: rgba(248,250,252,.9);
+
+  border: 1px solid rgba(226,232,240,.8);
+}
+
+.jd-charcount--warn {
+  color: #D97706;
+  background: rgba(255,251,235,.9);
+}
+
+.jd-charcount--error {
+  color: #DC2626;
+  background: rgba(254,242,242,.95);
+}
